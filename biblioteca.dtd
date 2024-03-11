@@ -1,4 +1,4 @@
-<!ELEMENT biblioteca (ejemplar+)>
+<!ELEMENT biblioteca (ejemplar+)> <!--Definoque dentro de biblioteca esta ejemplar-->
 <!ELEMENT ejemplar (tipo, autor+, prestado)>
 <!ELEMENT titulo (libro)>
 <!ELEMENT libro EMPTY>
