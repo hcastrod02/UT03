@@ -17,7 +17,7 @@
             <xs:enumeration value="Supra"/>
         </xs:restriction>
     </xs:simpleType>  
-    <xs:simpleType name="tipoprecio">
+    <xs:simpleType name="tipoprecio">               <!--Defino el tipo precio que es en base decimal y defino que solo puede haber 2 decimales-->
         <xs:restriction base="xs:decimal">
             <xs:fractionDigits value="2"/>
         </xs:restriction>
@@ -25,25 +25,25 @@
 <xs:element name="autobuses">
         <xs:Complextype>
             <xs:sequence>
-                <xs:element name="ruta" minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="ruta" minOccurs="1" maxOccurs="unbounded">    <!--Defino el nombre y las veces que aparece las minimas que es 1 y las maximas que es ilimitado-->
                     <Complextype>
                         <xs:sequence>
-                            <xs:element name="autobus" minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="autobus" minOccurs="0" maxOccurs="unbounded">    <!--Defino el nombre y las veces que aparece las minimas que es 0 y las maximas que es ilimitado-->
                                 <Complextype>
                                     <xs:sequence>
-                                        <xs:element name="salida"/>
-                                        <xs:element name="llegada"/>
-                                        <xs:element name="servicio"/>
-                                        <xs:element name="precio" minOccurs="unbounded"/>
+                                        <xs:element name="salida"/>                    <!--Defino el nombre-->
+                                        <xs:element name="llegada"/>                    <!--Defino el nombre-->
+                                        <xs:element name="servicio"/>                    <!--Defino el nombre-->
+                                        <xs:element name="precio" minOccurs="unbounded"/> <!--Defino el nombre y las veces minimas que aparece-->
                                     </xs:sequence>
                                 </Complextype>
                             </xs:element>
-                            <xs:attribute name="codigo" type="tipocodigo"/>
+                            <xs:attribute name="codigo" type="tipocodigo"/> <!--Defino el nombre y el tipo que he definido en las restricciones-->
                         </xs:sequence>
                     </Complextype>
                 </xs:element>
-                <xs:attribute name="origen" type="tipoorigen"/>
-                <xs:attribute name="destino" type="tipoorigen"/>
+                <xs:attribute name="origen" type="tipoorigen"/> <!--Defino el nombre y el tipo que he definido en las restricciones-->
+                <xs:attribute name="destino" type="tipoorigen"/> <!--Defino el nombre y el tipo que he definido en las restricciones-->
             </xs:sequence>
         </xs:Complextype>
     </xs:element>
