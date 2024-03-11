@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
     <xs:simpleType name="tipoorigen">            <!--Aquí defino las restricciones-->
-        <xs:restriction base="xs:string">
+        <xs:restriction base="xs:string">        <!--Defino el tipo origen que es de tipo string para que tenga un máximo de 25 caracteres-->
             <xs:maxLength value="25"/>
         </xs:restriction>
     </xs:simpleType>    
-    <xs:simpleType name="tipocodigo">
+    <xs:simpleType name="tipocodigo">            <!--Defino el tipo codigo para que haya 3 letras de la A a la Z  un guión y 3 númeroes del 0 al 9 tambien es de tipo string-->
         <xs:restriction base="xs:string">
             <xs:pattern value="(A-Z){3}-\d(0-9){3}"/>
         </xs:restriction>
     </xs:simpleType>  
-    <xs:simpleType name="tiposervicio">
+    <xs:simpleType name="tiposervicio">            <!--Defino el tipo servicio que es de tipo string y pongo los 3 valores que me dice el ejercicio-->
         <xs:restriction base="xs:string">
             <xs:enumeration value="Normal"/>
             <xs:enumeration value="Premium"/>
