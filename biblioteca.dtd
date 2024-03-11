@@ -1,14 +1,14 @@
-<!ELEMENT biblioteca (ejemplar+)> <!--Definoque dentro de biblioteca esta ejemplar-->
-<!ELEMENT ejemplar (tipo, autor+, prestado)>
+<!ELEMENT biblioteca (ejemplar+)> <!--Defino que dentro de biblioteca esta ejemplar y puede ser mas de uno esto lod efino con el símbolo "+"-->
+<!ELEMENT ejemplar (tipo, autor+, prestado)> <!--Defino que dentro de ejemplar esta el tipo autor que puede ser mas de uno y prestado-->
 <!ELEMENT titulo (libro)>
-<!ELEMENT libro EMPTY>
-<!ATTLIST libro isbn CDATA #REQUIRED>
+<!ELEMENT libro EMPTY> <!--defino que el elemento libro esta vacio no contiene datos-->
+<!ATTLIST libro isbn CDATA #REQUIRED> <!--defino que dentro de libro el atributo "isbn" contiene datos que son requeridos-->
 <!ATTLIST ejemplar tipo_ejem CDATA #REQUIRED
             titulo CDATA #REQUIRED
             editorial CDATA #REQUIRED>
-<!ELEMENT tipo (revista | libro)>
-<!ELEMENT autor (#PCDATA)>
-<!ELEMENT prestado (lector, fecha_pres, fecha_devol?)>
+<!ELEMENT tipo (revista | libro)> <!--Defino que el tipo solo puede ser revista o libro-->
+<!ELEMENT autor (#PCDATA)> <!--El elemento autor contiene datos-->
+<!ELEMENT prestado (lector, fecha_pres, fecha_devol?)> <!--En el elemento de fecha de devolución pongo que puede no estar-->
 <!ELEMENT lector (#PCDATA)>
 <!ELEMENT fecha_pres EMPTY>
 <!ELEMENT fecha_devol (#PCDATA)>
