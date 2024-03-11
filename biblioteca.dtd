@@ -1,0 +1,23 @@
+<!ELEMENT biblioteca (ejemplar+)>
+<!ELEMENT ejemplar (tipo, autor+, prestado)>
+<!ELEMENT titulo (libro)>
+<!ELEMENT libro EMPTY>
+<!ATTLIST libro isbn CDATA #REQUIRED>
+<!ATTLIST ejemplar tipo_ejem CDATA #REQUIRED
+            titulo CDATA #REQUIRED
+            editorial CDATA #REQUIRED>
+<!ELEMENT tipo (revista | libro)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT prestado (lector, fecha_pres, fecha_devol?)>
+<!ELEMENT lector (#PCDATA)>
+<!ELEMENT fecha_pres EMPTY>
+<!ELEMENT fecha_devol (#PCDATA)>
+<!ATTLIST fecha_pres dia CDATA #REQUIRED
+            mes CDATA #REQUIRED
+            anio CDATA #REQUIRED>
+<!ATTLIST fecha_devol dia CDATA #REQUIRED
+            mes CDATA #REQUIRED
+            anio CDATA #REQUIRED>
+<!ELEMENT revista EMPTY>
+<!ATTLIST revista mes CDATA #REQUIRED
+            anio CDATA #REQUIRED>

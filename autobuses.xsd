@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:simpleType name="tipoorigen">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="25"/>
+        </xs:restriction>
+    </xs:simpleType>    
+    <xs:simpleType name="tipocodigo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(A-Z){3}-\d(0-9){3}"/>
+        </xs:restriction>
+    </xs:simpleType>  
+    <xs:simpleType name="tiposervicio">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Normal"/>
+            <xs:enumeration value="Premium"/>
+            <xs:enumeration value="Supra"/>
+        </xs:restriction>
+    </xs:simpleType>  
+    <xs:simpleType name="tipoprecio">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+<xs:element name="autobuses">
+        <xs:Complextype>
+            <xs:sequence>
+                <xs:element name="ruta" minOccurs="1" maxOccurs="unbounded">
+                    <Complextype>
+                        <xs:sequence>
+                            <xs:element name="autobus" minOccurs="0" maxOccurs="unbounded">
+                                <Complextype>
+                                    <xs:sequence>
+                                        <xs:element name="salida"/>
+                                        <xs:element name="llegada"/>
+                                        <xs:element name="servicio"/>
+                                        <xs:element name="precio" minOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </Complextype>
+                            </xs:element>
+                            <xs:attribute name="codigo" type="tipocodigo"/>
+                        </xs:sequence>
+                    </Complextype>
+                </xs:element>
+                <xs:attribute name="origen" type="tipoorigen"/>
+                <xs:attribute name="destino" type="tipoorigen"/>
+            </xs:sequence>
+        </xs:Complextype>
+    </xs:element>
+</xs:schema>
